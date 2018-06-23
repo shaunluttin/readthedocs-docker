@@ -15,3 +15,4 @@ Create an Azure App Service with this Docker Image
 
     # change the docker image
     az webapp config container set --resource-group myResourceGroupXX --name bigfontdockerXX -c elnably/dockerimagetest
+    az webapp config container set --resource-group myResourceGroupXX --name bigfontdockerXX -c training/webapp
