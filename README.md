@@ -11,4 +11,5 @@ Create an Azure App Service with this Docker Image
     az webapp create --resource-group myResourceGroupXX --plan myAppServicePlanXX --name bigfontdockerXX --deployment-container-image-name shaunluttin/temp:v0.0.1      
     az webapp log config --resource-group myResourceGroupXX --name bigfontdockerXX --web-server-logging filesystem      
     az webapp log tail --name bigfontdockerXX --resource-group myResourceGroupXX
+    az webapp deployment container config -n bigfontdockerXX -g myResourceGroupXX -e true
 
