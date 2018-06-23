@@ -2,7 +2,7 @@ Create a Docker Image and Push it to Docker Hub
 
     docker build --tag shaunluttin/temp:v0.0.1 . 
     docker images 
-    docker push shaunluttin/temp:v.0.0.1
+    docker push shaunluttin/temp:v0.0.1
 
 Create an Azure App Service with this Docker Image
 
