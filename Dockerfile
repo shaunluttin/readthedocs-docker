@@ -29,7 +29,7 @@ RUN apt-get install -y --no-install-recommends openssh-server
 RUN echo "$SSH_PASSWD" | chpasswd
 
 COPY sshd_config /etc/ssh/
-COPY init.ssh /usr/local/bin/
+COPY init.sh /usr/local/bin/
 
 # Expose two ports, the latter is for SSH.
 EXPOSE 5000 2222
