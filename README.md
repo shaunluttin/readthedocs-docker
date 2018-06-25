@@ -50,8 +50,22 @@ These commands use the Azure Command Line Interface
 
 # Once it is Running: Configuration
 
+https://bigfontdocker05.scm.azurewebsites.net/webssh/host
+
+$ ./manage.py createsuperuser
 
 # Useful Docker Commands 
 
 docker stop $(docker ps -a -q)     
 docker rm $(docker ps -a -q)
+
+# Read the Docs Custom Install Documentation
+
+https://docs.readthedocs.io/en/latest/custom_installs/local_rtd_vm.html#local-rtd-setup
+
+# TODO 
+
+1. Figure out how to host this more inexpensively that an Azure Linux App Service
+2. Set up the Elastic Search.
+3. Import existing documentation.
+
