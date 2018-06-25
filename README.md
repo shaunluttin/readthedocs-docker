@@ -1,8 +1,19 @@
-Create a Docker Image and Push it to Docker Hub
 
-    docker build --tag shaunluttin/temp:v0.0.1 . 
+# Run Locally
+
+    git clone git@github.com:shaunluttin/readthedocs-docker.git
+    cd readthedocs-docker
+    docker build . shaunluttin/readthedocs:v0.0.0
+    docker run --detach --name readthedocs --publish-all shaunluttin/readthedocs:v0.0.13
+    docker port readthedocs
+
+Open a browser and go to localhost:PORT
+    
+# Create a Docker Image and Push it to Docker Hub
+
+    docker build . --tag shaunluttin/readthedocs-docker:v0.0.0 
     docker images 
-    docker push shaunluttin/temp:v0.0.1
+    docker push shaunluttin/readthedocs-docker:v0.0.0
 
 Create an Azure App Service with this Docker Image
 
