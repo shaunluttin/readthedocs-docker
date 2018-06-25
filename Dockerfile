@@ -30,11 +30,12 @@ RUN echo "$SSH_PASSWD" | chpasswd
 
 COPY sshd_config /etc/ssh/
 COPY init.sh /usr/local/bin/
+RUN chmod u+x /usr/local/bin/init.sh
 
 # Expose two ports, the latter is for SSH.
 EXPOSE 5000 2222
 
 # CMD ["python", "manage.py", "runserver", "0.0.0.0:5000"]
-ENTRYPOINT ["init.ssh"]
+ENTRYPOINT ["init.sh"]
 
 
