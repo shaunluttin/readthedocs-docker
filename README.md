@@ -36,9 +36,22 @@ These commands use the Azure Command Line Interface
     az webapp create --resource-group myResourceGroupXX --plan myAppServicePlanXX --name bigfontdockerXX --deployment-container-image-name shaunluttin/readthedocs:v0.0.0; 
     az webapp log config --resource-group myResourceGroupXX --name bigfontdockerXX --web-server-logging filesystem; 
     az webapp log tail --name bigfontdockerXX --resource-group myResourceGroupXX; 
+
+    # enable docker continuous deployment (with updates to same image name:tag)
     az webapp deployment container config -n bigfontdockerXX -g myResourceGroupXX -e true;
 
     # (testing) change the docker image
     az webapp config container set --resource-group myResourceGroupXX --name bigfontdockerXX -c elnably/dockerimagetest
     az webapp config container set --resource-group myResourceGroupXX --name bigfontdockerXX -c training/webapp
     az webapp config container set --resource-group myResourceGroupXX --name bigfontdockerXX -c carinamarina/hello-world-app
+
+    # restart after changing the image
+    az webapp restart --resource-group myResourceGroupXX --name bigfontdockerXX
+
+# Once it is Running: Configuration
+
+
+# Useful Docker Commands 
+
+docker stop $(docker ps -a -q)     
+docker rm $(docker ps -a -q)
