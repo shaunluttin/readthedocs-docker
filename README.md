@@ -1,13 +1,25 @@
 
+# Prerequisites
+
+* Windows 10
+* Windows Subsystem for Linux
+* Docker 
+    * Tray Icon | Right Click | Settings | Expose daemon on tcp://localhost:2375 without TLS.
+    * Tray Icon | Right Click | Switch to Linux Containers.
+
 # Run Locally
 
-    git clone git@github.com:shaunluttin/readthedocs-docker.git
+We tested the following with `bash` from the Windows Subsystem for Linux.
+
+Replace `v0.0.0` with the next appropriate version.
+
+    git clone git@github.com:shaunluttin/readthedocs-docker.git --recurse-submodules
     cd readthedocs-docker
-    docker build . shaunluttin/readthedocs:v0.0.0
-    docker run --detach --name readthedocs --publish-all shaunluttin/readthedocs:v0.0.13
+    docker build . --tag shaunluttin/readthedocs:v0.0.0
+    docker run --detach --name readthedocs --publish-all shaunluttin/readthedocs:v0.0.0
     docker port readthedocs
 
-Open a browser and go to localhost:PORT
+The final command will output `5000/tcp -> 0.0.0.0:PORT`. Open a web browser in Windows and go to localhost:PORT.
     
 # Create a Docker Image and Push it to Docker Hub
 
